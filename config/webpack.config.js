@@ -301,10 +301,12 @@ module.exports = function (webpackEnv) {
       ],
     },
     resolve: {
+      /*
       fallback: {
         "stream": require.resolve("stream-browserify"),
         "buffer": require.resolve("buffer")
       },
+      */
       // This allows you to set a fallback for where webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
       // if there are any conflicts. This matches Node resolution mechanism.
@@ -655,12 +657,12 @@ module.exports = function (webpackEnv) {
       new webpack.DefinePlugin(env.stringified),
       // Work around for Buffer is undefined:
       // https://github.com/webpack/changelog-v5/issues/10
-      new webpack.ProvidePlugin({
+      /*new webpack.ProvidePlugin({
           Buffer: ['buffer', 'Buffer'],
       }),
       new webpack.ProvidePlugin({
           process: 'process/browser',
-      }),
+      }),*/
       // Experimental hot reloading for React .
       // https://github.com/facebook/react/tree/main/packages/react-refresh
       isEnvDevelopment &&
