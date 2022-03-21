@@ -632,6 +632,11 @@ module.exports = function (webpackEnv) {
             : undefined
         )
       ),
+      // Work around for Buffer is undefined:
+      // https://github.com/webpack/changelog-v5/issues/10
+      new webpack.ProvidePlugin({
+          Buffer: ['buffer', 'Buffer'],
+      }),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358
