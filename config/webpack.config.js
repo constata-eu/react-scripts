@@ -253,6 +253,9 @@ module.exports = function (webpackEnv) {
     infrastructureLogging: {
       level: 'none',
     },
+    experiments: {
+      asyncWebAssembly: true,
+    },
     optimization: {
       minimize: isEnvProduction,
       minimizer: [
