@@ -256,7 +256,7 @@ module.exports = function (webpackEnv) {
       level: 'none',
     },
     experiments: {
-      futureDefaults: true
+      syncWebAssembly: true,
     },
     optimization: {
       minimize: isEnvProduction,
